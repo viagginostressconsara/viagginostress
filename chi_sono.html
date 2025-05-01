@@ -1,39 +1,51 @@
-
 <!DOCTYPE html>
 <html lang="it">
 <head>
   <meta charset="UTF-8" />
-  <title>Chi è Sara</title>
+  <title>Chi Sono</title>
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet" />
   <style>
     body {
       font-family: 'Open Sans', sans-serif;
-      background: #f0f8ff;
+      background: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1400&q=80') no-repeat center center fixed;
+      background-size: cover;
       margin: 0;
       padding: 20px;
       text-align: center;
+      color: #222;
     }
-    img {
-      max-width: 90%%;
-      height: auto;
-      border-radius: 10px;
-      margin-bottom: 20px;
-    }
-    .content {
+    .container {
       max-width: 800px;
-      margin: auto;
-      background: white;
-      padding: 20px;
+      background: rgba(255,255,255,0.85);
+      margin: 40px auto;
+      padding: 40px 20px;
       border-radius: 10px;
+    }
+    img.logo {
+      height: 60px;
+      margin-top: 20px;
+    }
+    a.home-link {
+      display: inline-block;
+      margin-top: 30px;
+      text-decoration: none;
+      color: white;
+      background: #246c84;
+      padding: 10px 20px;
+      border-radius: 6px;
     }
   </style>
 </head>
 <body>
-  <div class="content">
-    <h1>Chi è Sara</h1>
-    <img src="sara.jpg" alt="Sara">
-    <p>Sara è una viaggiatrice brillante, creativa e sempre con il sorriso. Ama costruire viaggi su misura, pensati per far vivere emozioni vere e senza stress. Dalla scelta del luogo al ritmo delle giornate, tutto viene curato con attenzione, esperienza e un pizzico di fantasia.</p>
-    <p>Prima di ogni partenza prepara moodboard, check-list personalizzate, seleziona location autentiche e attività rilassanti per permettere a tutti di viaggiare leggeri – dentro e fuori.</p>
+  <img src="logo.png" alt="Logo" class="logo">
+  <div class="container">
+    <h1>Chi Sono</h1>
+    
+      <img src="sara.jpg" alt="Sara" style="max-width:100%; border-radius:10px; margin:20px 0;">
+      <p>Sara è una viaggiatrice brillante, creativa e sempre con il sorriso. Ama costruire viaggi su misura...</p>
+      <p>Prepara moodboard, check-list personalizzate, seleziona location autentiche e attività rilassanti.</p>
+    
+    <br><a href="index.html" class="home-link">&#8592; Torna alla Home</a>
   </div>
 </body>
 </html>
