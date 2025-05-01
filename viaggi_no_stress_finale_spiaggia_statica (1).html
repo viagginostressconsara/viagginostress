@@ -1,0 +1,187 @@
+
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Viaggi no stress con Sara</title>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      font-family: 'Open Sans', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1400&q=80') no-repeat center center fixed;
+      background-size: cover;
+      color: #333;
+    }
+    .topbar {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(203, 231, 243, 0.95);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      z-index: 1000;
+    }
+    .site-title {
+      font-size: 1.5em;
+      font-weight: bold;
+      color: #246c84;
+      flex-grow: 1;
+      text-align: center;
+    }
+    .view-toggle button {
+      background: none;
+      border: none;
+      font-size: 1.5em;
+      cursor: pointer;
+      margin-left: 10px;
+    }
+    .hero {
+      text-align: center;
+      color: #246c84;
+      padding-top: 120px;
+      padding-bottom: 80px;
+    }
+    .hero h1 {
+      font-size: 2.8em;
+      margin-bottom: 20px;
+    }
+    .hero p {
+      font-size: 1.2em;
+      background: rgba(255, 255, 255, 0.7);
+      display: inline-block;
+      padding: 10px 20px;
+      border-radius: 8px;
+    }
+    .section {
+      background-color: rgba(255,255,255,0.85);
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 40px 20px;
+      border-radius: 8px;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.6s ease-in-out;
+    }
+    .section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .cta {
+      display: inline-block;
+      background: #246c84;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 5px;
+      text-decoration: none;
+      margin-top: 20px;
+    }
+    footer {
+      background: #246c84;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 20px;
+    }
+    input, textarea {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    input[type="submit"] {
+      background: #246c84;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+  <script>
+    function setView(mode) {
+      if (mode === 'mobile') {
+        document.querySelector('meta[name="viewport"]').setAttribute('content', 'width=375');
+      } else {
+        document.querySelector('meta[name="viewport"]').setAttribute('content', 'width=device-width, initial-scale=1.0');
+      }
+    }
+
+    window.addEventListener('scroll', () => {
+      document.querySelectorAll('.section').forEach(el => {
+        const rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 50) {
+          el.classList.add('visible');
+        }
+      });
+    });
+  </script>
+</head>
+<body>
+  <div class="topbar">
+    <div class="site-title">Viaggi no stress con Sara</div>
+    <div class="view-toggle">
+      <button onclick="setView('desktop')" title="Desktop">&#128187;</button>
+      <button onclick="setView('mobile')" title="Mobile">&#128241;</button>
+    </div>
+  </div>
+
+  <div class="hero">
+    <h1>Viaggi no stress con Sara</h1>
+    <p>Idee, consigli e ispirazioni per chi vuole godersi il viaggio senza complicazioni.</p>
+  </div>
+
+  <div class="section" id="chi-sara">
+    <h2>Chi sono</h2>
+    <p>Viaggio da sempre con una regola sola: niente stress. Amo organizzare esperienze autentiche, leggere e memorabili...</p>
+  </div>
+
+  <div class="section" id="idee">
+    <h2>Idee di viaggio</h2>
+    <p>Che tu stia cercando un weekend rilassante, una fuga benessere, o un'avventura culturale...</p>
+  </div>
+
+  <div class="section" id="consigli">
+    <h2>Consigli pratici</h2>
+    <p>Organizzare un viaggio può sembrare complicato, ma con i giusti trucchi tutto diventa più semplice.</p>
+    <a href="#" class="cta">Scopri i consigli</a>
+  </div>
+
+  <div class="section" id="organizzatori">
+    <h2>Per organizzatori</h2>
+    <p>Aiuto agenzie e professionisti a costruire esperienze di viaggio senza stress...</p>
+    <a href="#" class="cta">Collabora con me</a>
+  </div>
+
+  <div class="section" id="newsletter">
+    <h2>Newsletter</h2>
+    <p>Iscriviti alla newsletter “Viaggia Zen con Sara” e ricevi idee, itinerari e consigli esclusivi.</p>
+    <a href="#" class="cta">Iscriviti ora</a>
+  </div>
+
+  <div class="section" id="contatti">
+    <h2>Contatti</h2>
+    <p>Hai una domanda, un’idea, o vuoi lavorare insieme? Scrivimi!</p>
+    <form>
+      <input type="text" name="nome" placeholder="Nome" required />
+      <input type="text" name="cognome" placeholder="Cognome" required />
+      <input type="email" name="email" placeholder="Email" required />
+      <input type="tel" name="telefono" placeholder="Numero di telefono" required />
+      <textarea name="messaggio" rows="4" placeholder="Scrivi qui il tuo messaggio..."></textarea>
+      <input type="submit" value="Invia" />
+    </form>
+  </div>
+
+  <footer>
+    © 2025 Viaggi no stress con Sara - Tutti i diritti riservati
+  </footer>
+</body>
+</html>
